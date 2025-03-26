@@ -1,0 +1,42 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django development database
+db.sqlite3
+
+# Media uploads 
+media/uploads/
+
+# Static files collected during deployment
+staticfiles/
+
+# Virtual environment
+.venv
+
+# Kaggle credentials 
+kaggle.json
+
+# Machine Learning model weights
+*.pth
+
+# Logs
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Sensitive configuration files
+*.env
+local_settings.py
