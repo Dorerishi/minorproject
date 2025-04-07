@@ -1,0 +1,6 @@
+{
+    "patient_name": "Pat1",
+    "file_name": "Pat1_normal_brain.jpg",
+    "prediction": "Normal",
+    "confidence": 1.0
+}

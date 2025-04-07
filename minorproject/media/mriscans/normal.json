@@ -1,6 +1,6 @@
 {
     "patient_name": "normal",
-    "file_name": "normal_normal_brain.jpg",
+    "file_name": "normal_normal_normal_brain.jpg",
     "prediction": "Normal",
     "confidence": 1.0
 }
