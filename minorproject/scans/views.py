@@ -80,10 +80,17 @@ def classify_scan(request):
     return render(request, "upload.html")
 
 def scan_history(request):
-    results = ScanResult.objects.order_by('-uploaded_at')  # latest first
+    results = ScanResult.objects.all()
+
+    for r in results:
+        path = os.path.join(settings.MEDIA_ROOT, "mriscans", r.file_name)
+        if os.path.exists(path):
+            r.size_kb = round(os.path.getsize(path) / 1024, 2)
+        else:
+            r.size_kb = "Missing"
+
     return render(request, "history.html", {"results": results})
 
-from .models import ScanResult
 
 def compress_and_save(request):
     if request.method == "POST":

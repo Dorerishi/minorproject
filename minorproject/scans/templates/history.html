@@ -17,7 +17,8 @@
         <td>{{ result.patient_name }}</td>
         <td>{{ result.prediction }}</td>
         <td>{{ result.confidence }}</td>
-        <td>{{ result.uploaded_at }}</td>
+        <td>{{ result.file_name }}</td>
+        <td>{{ result.size_kb }} KB</td>
         <td><a href="/media/mriscans/{{ result.file_name }}" target="_blank">View</a></td>
         <td>
             {% if result.fhir_patient_id %}
