@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import classify_scan,home
+from . import views
 
 urlpatterns = [
-    path("", home, name="home"),
-    path("classify/", classify_scan, name="classify_scan"),
+    path('', views.home, name='home'),
+    path('classify/', views.classify_scan, name='classify'),
+    path('history/', views.scan_history, name='history'),
 ]

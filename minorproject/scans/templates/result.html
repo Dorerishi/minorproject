@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
-        .container { padding: 20px; border: 1px solid #ddd; border-radius: 8px; width: 50%; margin: auto; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); }
-        a { text-decoration: none; color: #007BFF; }
-    </style>
-</head>
-<body>
+{% extends "base.html" %} 
+
+{% block content %}
 
     <div class="container">
         <h2>Prediction Result</h2>
-        <p><strong>Patient:</strong> {{ result.patient_name }}</p>
-        <p><strong>File:</strong> {{ result.file_name }}</p>
-        <p><strong>Diagnosis:</strong> {{ result.prediction }}</p>
-        <p><strong>Confidence:</strong> {{ result.confidence }}</p>
+        <p>Patient: {{ result.patient_name }}</p>
+        <p>Prediction: {{ result.prediction }}</p>
+        <p>Confidence: {{ result.confidence }}</p>
+        <p>File: {{ result.file_name }}</p>
 
         <a href="/">Go Back</a>
     </div>
 
-</body>
-</html>
+    {% endblock %}

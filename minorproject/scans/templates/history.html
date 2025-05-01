@@ -1,0 +1,23 @@
+{% extends "base.html" %}  <!-- optional if you're using base layout -->
+
+{% block content %}
+<h2>Scan History</h2>
+<table border="1">
+    <tr>
+        <th>Patient Name</th>
+        <th>Prediction</th>
+        <th>Confidence</th>
+        <th>Uploaded At</th>
+        <th>File</th>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{ result.patient_name }}</td>
+        <td>{{ result.prediction }}</td>
+        <td>{{ result.confidence }}</td>
+        <td>{{ result.uploaded_at }}</td>
+        <td><a href="/media/mriscans/{{ result.file_name }}" target="_blank">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
