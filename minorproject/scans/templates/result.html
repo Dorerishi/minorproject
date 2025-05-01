@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <div class="container">
-        <h2>Prediction Result</h2>
-        <p>Patient: {{ result.patient_name }}</p>
-        <p>Prediction: {{ result.prediction }}</p>
-        <p>Confidence: {{ result.confidence }}</p>
-        <p>File: {{ result.file_name }}</p>
+<h2>Prediction: {{ result.prediction }}</h2>
+<p>Confidence: {{ result.confidence }}</p>
 
-        <a href="/">Go Back</a>
-    </div>
+<form action="{% url 'compress_and_save' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="result_id" value="{{ result.id }}">
+    <button type="submit">Compress & Save</button>
+</form>
 
-    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %}
+<h2>Compression Successful</h2>
+<p>Compressed file saved: {{ result.file_name }}</p>
+<a href="/media/mriscans/{{ result.file_name }}" target="_blank">Download Compressed Scan</a>
+<br><br>
+<a href="/">Back to Home</a>
+
+
+
+{% endblock %}

@@ -9,7 +9,7 @@ This is a Django-based web application for brain tumor detection using a Vision 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone "https://github.com/Dorerishi/minorproject.git"
 cd minorproject
 ```
 

@@ -9,7 +9,9 @@
         <th>Confidence</th>
         <th>Uploaded At</th>
         <th>File</th>
+        <th>FHIR Links</th>
     </tr>
+    
     {% for result in results %}
     <tr>
         <td>{{ result.patient_name }}</td>
@@ -17,7 +19,31 @@
         <td>{{ result.confidence }}</td>
         <td>{{ result.uploaded_at }}</td>
         <td><a href="/media/mriscans/{{ result.file_name }}" target="_blank">View</a></td>
+        <td>
+            {% if result.fhir_patient_id %}
+                <a href="https://hapi.fhir.org/baseR4/Patient/{{ result.fhir_patient_id }}" target="_blank">Patient</a>
+            {% endif %}
+            {% if result.fhir_observation_id %}
+                | <a href="https://hapi.fhir.org/baseR4/Observation/{{ result.fhir_observation_id }}" target="_blank">Observation</a>
+            {% endif %}
+        </td>
+        <td>
+            
+            <form action="{% url 'compress_and_save' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="result_id" value="{{ result.id }}">
+                <button type="submit">Compress</button>
+            </form>
+            
+            
+            <form action="{% url 'delete_scan' result.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            
+        </td>
     </tr>
     {% endfor %}
+    
 </table>
 {% endblock %}
