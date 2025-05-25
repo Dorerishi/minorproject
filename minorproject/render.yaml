@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: brain-tumor-detector
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn minorproject.wsgi --log-file -
+    envVars:
+      - key: SECRET_KEY
+        fromService:
+          name: brain-tumor-detector
+          key: SECRET_KEY
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        fromService:
+          name: brain-tumor-postgres
+          key: CONNECTION_STRING
+databases:
+  - name: brain-tumor-postgres
+    plan: free
+    userConfig:
+      extensions: []
