@@ -184,11 +184,11 @@ sqlparse==0.4.4
 stack-data==0.6.3
 stegcracker==2.1.0
 swagger_ui_bundle==1.1.0
-sympy==1.13.1
+sympy==1.13.3
 systemd-python==234
 threadpoolctl==3.5.0
 tokenizers==0.19.1
-torch==2.6.0
+torch==2.7.0+cpu
 tornado==6.4
 tqdm==4.66.2
 traitlets==5.14.3
@@ -212,6 +212,7 @@ webencodings==0.5.1
 websocket-client==1.8.0
 Werkzeug==2.2.3
 whichcraft==0.6.1
+whitenoise==6.9.0
 xdg==5
 xdis==6.0.5
 xkit==0.0.0
