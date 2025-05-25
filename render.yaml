@@ -8,17 +8,10 @@ services:
     startCommand: gunicorn minorproject.wsgi --log-file -
     envVars:
       - key: SECRET_KEY
-        fromService:
-          name: brain-tumor-detector
-          key: SECRET_KEY
+        value: your-secret-key
       - key: DEBUG
         value: "False"
-      - key: DATABASE_URL
-        fromService:
-          name: brain-tumor-postgres
-          key: CONNECTION_STRING
-databases:
-  - name: brain-tumor-postgres
-    plan: free
-    userConfig:
-      extensions: []
+      - key: KAGGLE_USERNAME
+        value: your-kaggle-username
+      - key: KAGGLE_KEY
+        value: your-kaggle-key
