@@ -14,8 +14,9 @@ staticfiles/
 
 # Virtual environment
 .venv
-# kaggle
-.kaggle
+
+# Kaggle credentials 
+kaggle.json
 
 # Machine Learning model weights
 *.pth
